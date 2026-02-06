@@ -1,0 +1,2238 @@
+/* Wallet App Styles */
+
+.container {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+}
+
+.card {
+  background: linear-gradient(145deg, #1e1e2e, #252536);
+  border-radius: 16px;
+  padding: 2.5rem;
+  width: 100%;
+  max-width: 420px;
+  box-shadow: 
+    0 4px 6px rgba(0, 0, 0, 0.1),
+    0 10px 40px rgba(0, 0, 0, 0.3),
+    inset 0 1px 0 rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.wallet-card {
+  max-width: 480px;
+  padding: 1.5rem;
+}
+
+.logo {
+  width: 64px;
+  height: 64px;
+  margin: 0 auto 1.5rem;
+  background: linear-gradient(135deg, #9945ff 0%, #14f195 100%);
+  border-radius: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+}
+
+.logo svg {
+  width: 36px;
+  height: 36px;
+}
+
+h1 {
+  font-size: 1.75rem;
+  font-weight: 600;
+  text-align: center;
+  margin: 0 0 0.5rem;
+  background: linear-gradient(135deg, #ffffff 0%, #a0a0a0 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+h2 {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #fff;
+  margin: 0 0 1rem;
+}
+
+h3 {
+  font-size: 0.85rem;
+  font-weight: 500;
+  color: #888;
+  margin: 1rem 0 0.5rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.subtitle {
+  text-align: center;
+  color: #888;
+  margin: 0 0 2rem;
+  font-size: 0.95rem;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+input {
+  width: 100%;
+  padding: 1rem 1.25rem;
+  font-size: 1rem;
+  background: rgba(0, 0, 0, 0.3);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 12px;
+  color: #fff;
+  outline: none;
+  transition: all 0.2s ease;
+  box-sizing: border-box;
+}
+
+input::placeholder {
+  color: #666;
+}
+
+input:focus {
+  border-color: #9945ff;
+  box-shadow: 0 0 0 3px rgba(153, 69, 255, 0.2);
+}
+
+input[type="number"] {
+  -moz-appearance: textfield;
+}
+
+input[type="number"]::-webkit-outer-spin-button,
+input[type="number"]::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+button {
+  padding: 1rem 1.5rem;
+  font-size: 1rem;
+  font-weight: 500;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  border: none;
+}
+
+button.primary {
+  background: linear-gradient(135deg, #9945ff 0%, #7c3aed 100%);
+  color: white;
+}
+
+button.primary:hover:not(:disabled) {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(153, 69, 255, 0.4);
+}
+
+button.primary:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.text-button {
+  background: transparent;
+  color: #888;
+  padding: 0.5rem;
+  font-size: 0.875rem;
+  margin-top: 1rem;
+  width: 100%;
+}
+
+.text-button:hover {
+  color: #fff;
+}
+
+.text-button.danger:hover {
+  color: #ef4444;
+}
+
+.text-button.small {
+  margin: 0;
+  padding: 0.25rem 0.5rem;
+  font-size: 0.75rem;
+  width: auto;
+}
+
+.error {
+  background: rgba(239, 68, 68, 0.1);
+  border: 1px solid rgba(239, 68, 68, 0.3);
+  color: #ef4444;
+  padding: 0.75rem 1rem;
+  border-radius: 8px;
+  margin-bottom: 1rem;
+  font-size: 0.875rem;
+  text-align: center;
+}
+
+/* Wallet Header */
+.wallet-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 1rem;
+}
+
+.wallet-header h1 {
+  margin: 0;
+  text-align: left;
+  font-size: 1.5rem;
+}
+
+.icon-button {
+  width: 40px;
+  height: 40px;
+  padding: 0;
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #888;
+}
+
+.icon-button:hover {
+  background: rgba(255, 255, 255, 0.1);
+  color: #fff;
+}
+
+.icon-button svg {
+  width: 20px;
+  height: 20px;
+}
+
+/* Address Bar */
+.address-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: rgba(0, 0, 0, 0.3);
+  border-radius: 10px;
+  padding: 0.75rem 1rem;
+  margin-bottom: 1rem;
+}
+
+.address {
+  font-family: 'SF Mono', 'Fira Code', monospace;
+  font-size: 0.9rem;
+  color: #14f195;
+}
+
+.copy-btn {
+  padding: 0.4rem 0.8rem;
+  font-size: 0.75rem;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 6px;
+  color: #888;
+}
+
+.copy-btn:hover {
+  background: rgba(255, 255, 255, 0.15);
+  color: #fff;
+}
+
+/* Tabs */
+.tabs {
+  display: flex;
+  gap: 0.5rem;
+  margin-bottom: 1.5rem;
+  background: rgba(0, 0, 0, 0.2);
+  border-radius: 10px;
+  padding: 0.25rem;
+}
+
+.tab {
+  flex: 1;
+  padding: 0.75rem;
+  font-size: 0.875rem;
+  background: transparent;
+  color: #888;
+  border-radius: 8px;
+}
+
+.tab:hover {
+  color: #fff;
+}
+
+.tab.active {
+  background: rgba(153, 69, 255, 0.2);
+  color: #fff;
+}
+
+.tab-content {
+  min-height: 300px;
+}
+
+/* Balance Tab */
+.balance-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 1rem;
+}
+
+.balance-header h2 {
+  margin: 0;
+}
+
+.refresh-btn {
+  width: 32px;
+  height: 32px;
+  padding: 0;
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 8px;
+  font-size: 1.1rem;
+  color: #888;
+}
+
+.refresh-btn:hover {
+  background: rgba(255, 255, 255, 0.1);
+  color: #fff;
+}
+
+.balance-card {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: rgba(0, 0, 0, 0.2);
+  border-radius: 12px;
+  padding: 1rem 1.25rem;
+  margin-bottom: 0.75rem;
+}
+
+.balance-card.sol {
+  background: linear-gradient(135deg, rgba(153, 69, 255, 0.15), rgba(20, 241, 149, 0.1));
+  border: 1px solid rgba(153, 69, 255, 0.2);
+}
+
+.token-icon-info {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.token-logo {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.balance-info {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.token-name {
+  font-size: 0.8rem;
+  color: #888;
+  font-family: 'SF Mono', 'Fira Code', monospace;
+}
+
+.token-symbol {
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: #14f195;
+}
+
+.token-amount {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: #fff;
+}
+
+.send-btn {
+  padding: 0.5rem 1rem;
+  font-size: 0.8rem;
+  background: rgba(153, 69, 255, 0.2);
+  color: #9945ff;
+  border-radius: 8px;
+}
+
+.send-btn:hover {
+  background: rgba(153, 69, 255, 0.3);
+  color: #fff;
+}
+
+.token-list {
+  margin-top: 1rem;
+}
+
+.no-tokens {
+  text-align: center;
+  color: #666;
+  padding: 2rem;
+  font-size: 0.9rem;
+}
+
+.loading-state {
+  text-align: center;
+  color: #888;
+  padding: 2rem;
+}
+
+/* Send Tab */
+.toggle-group {
+  display: flex;
+  gap: 0.5rem;
+  background: rgba(0, 0, 0, 0.2);
+  border-radius: 10px;
+  padding: 0.25rem;
+}
+
+.toggle {
+  flex: 1;
+  padding: 0.6rem;
+  font-size: 0.85rem;
+  background: transparent;
+  color: #888;
+  border-radius: 8px;
+}
+
+.toggle:hover {
+  color: #fff;
+}
+
+.toggle.active {
+  background: linear-gradient(135deg, #9945ff 0%, #7c3aed 100%);
+  color: #fff;
+}
+
+.success-message {
+  text-align: center;
+  padding: 2rem 1rem;
+}
+
+.success-icon {
+  width: 64px;
+  height: 64px;
+  margin: 0 auto 1rem;
+  background: linear-gradient(135deg, #14f195, #10b981);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2rem;
+  color: white;
+}
+
+.success-message p {
+  font-size: 1.1rem;
+  color: #fff;
+  margin: 0 0 1rem;
+}
+
+.tx-link {
+  display: inline-block;
+  padding: 0.75rem 1.5rem;
+  background: rgba(20, 241, 149, 0.1);
+  border: 1px solid rgba(20, 241, 149, 0.3);
+  border-radius: 10px;
+  color: #14f195;
+  text-decoration: none;
+  font-size: 0.9rem;
+}
+
+.tx-link:hover {
+  background: rgba(20, 241, 149, 0.2);
+}
+
+/* Keys Tab */
+.key-section {
+  margin-bottom: 1.5rem;
+}
+
+.key-section label {
+  display: block;
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: #888;
+  margin-bottom: 0.5rem;
+}
+
+.label-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 0.5rem;
+}
+
+.label-row label {
+  margin-bottom: 0;
+}
+
+.key-display {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  background: rgba(0, 0, 0, 0.3);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 12px;
+  padding: 1rem 1.25rem;
+}
+
+.key-display.secret {
+  min-height: 56px;
+}
+
+.key-value {
+  flex: 1;
+  font-family: 'SF Mono', 'Fira Code', 'Consolas', monospace;
+  font-size: 0.95rem;
+  color: #14f195;
+  word-break: break-all;
+}
+
+.key-value.secret-key {
+  font-size: 0.75rem;
+  line-height: 1.4;
+}
+
+.key-value.masked {
+  color: #666;
+}
+
+.copy-button {
+  flex-shrink: 0;
+  width: 36px;
+  height: 36px;
+  padding: 0;
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #888;
+  font-size: 1rem;
+}
+
+.copy-button:hover {
+  background: rgba(255, 255, 255, 0.1);
+  color: #fff;
+}
+
+.warning {
+  margin: 0.75rem 0 0;
+  font-size: 0.8rem;
+  color: #f59e0b;
+  padding: 0.75rem;
+  background: rgba(245, 158, 11, 0.1);
+  border-radius: 8px;
+  border: 1px solid rgba(245, 158, 11, 0.2);
+}
+
+/* Token Select Dropdown */
+.select-wrapper {
+  position: relative;
+}
+
+.token-select {
+  width: 100%;
+  padding: 1rem 1.25rem;
+  font-size: 1rem;
+  background: rgba(0, 0, 0, 0.3);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 12px;
+  color: #fff;
+  outline: none;
+  cursor: pointer;
+  appearance: none;
+  -webkit-appearance: none;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Cpath fill='%23888' d='M6 8L1 3h10z'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 1rem center;
+}
+
+.token-select:focus {
+  border-color: #9945ff;
+  box-shadow: 0 0 0 3px rgba(153, 69, 255, 0.2);
+}
+
+.token-select option {
+  background: #1e1e2e;
+  color: #fff;
+  padding: 0.5rem;
+}
+
+/* Spinner */
+.spinner {
+  width: 40px;
+  height: 40px;
+  margin: 2rem auto;
+  border: 3px solid rgba(153, 69, 255, 0.2);
+  border-top-color: #9945ff;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* ==================== */
+/* Top Navigation */
+/* ==================== */
+.top-nav {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-bottom: 1rem;
+  padding: 0.5rem;
+  background: rgba(0, 0, 0, 0.3);
+  border-radius: 12px;
+  max-width: 480px;
+  width: 100%;
+}
+
+.nav-btn {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.75rem 1.25rem;
+  font-size: 0.9rem;
+  background: transparent;
+  color: #888;
+  border-radius: 8px;
+  flex: 1;
+  justify-content: center;
+}
+
+.nav-btn:hover {
+  color: #fff;
+  background: rgba(255, 255, 255, 0.05);
+}
+
+.nav-btn.active {
+  background: linear-gradient(135deg, rgba(153, 69, 255, 0.3), rgba(124, 58, 237, 0.2));
+  color: #fff;
+}
+
+.nav-lock {
+  flex: 0;
+  width: 40px;
+  height: 40px;
+  margin-left: auto;
+}
+
+/* ==================== */
+/* Multisig Card */
+/* ==================== */
+.multisig-card {
+  max-width: 520px;
+  padding: 1.5rem;
+}
+
+.multisig-header {
+  margin-bottom: 1rem;
+}
+
+.multisig-header h1 {
+  text-align: left;
+  margin: 0;
+  font-size: 1.5rem;
+}
+
+/* ==================== */
+/* Create Vault Styles */
+/* ==================== */
+.create-vault .subtitle {
+  text-align: left;
+  margin-bottom: 1.5rem;
+}
+
+.members-section {
+  margin-bottom: 1.5rem;
+}
+
+.section-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 1rem;
+}
+
+.section-header h3 {
+  margin: 0;
+  text-transform: none;
+  font-size: 1rem;
+  color: #fff;
+}
+
+.add-btn {
+  padding: 0.4rem 0.8rem;
+  font-size: 0.8rem;
+  background: rgba(20, 241, 149, 0.1);
+  color: #14f195;
+  border-radius: 6px;
+}
+
+.add-btn:hover {
+  background: rgba(20, 241, 149, 0.2);
+}
+
+.member-card {
+  background: rgba(0, 0, 0, 0.2);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  border-radius: 12px;
+  padding: 1rem;
+  margin-bottom: 0.75rem;
+}
+
+.member-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 0.75rem;
+}
+
+.member-number {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: #9945ff;
+}
+
+.remove-btn {
+  padding: 0.25rem 0.5rem;
+  font-size: 0.75rem;
+  background: rgba(239, 68, 68, 0.1);
+  color: #ef4444;
+  border-radius: 4px;
+}
+
+.remove-btn:hover {
+  background: rgba(239, 68, 68, 0.2);
+}
+
+.permissions {
+  display: flex;
+  gap: 1rem;
+  margin-top: 0.75rem;
+}
+
+.permission-label {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-size: 0.85rem;
+  color: #888;
+  cursor: pointer;
+}
+
+.permission-label input[type="checkbox"] {
+  width: 16px;
+  height: 16px;
+  padding: 0;
+  accent-color: #9945ff;
+}
+
+.permission-label span {
+  user-select: none;
+}
+
+.threshold-section {
+  margin-bottom: 1.5rem;
+}
+
+.threshold-section h3 {
+  margin: 0 0 0.25rem;
+  text-transform: none;
+  font-size: 1rem;
+  color: #fff;
+}
+
+.threshold-description {
+  font-size: 0.85rem;
+  color: #888;
+  margin: 0 0 0.75rem;
+}
+
+.threshold-input {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.threshold-input input {
+  width: 80px;
+  text-align: center;
+}
+
+.threshold-label {
+  font-size: 0.9rem;
+  color: #888;
+}
+
+.submit-section {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  padding-top: 1rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.success-details {
+  text-align: left;
+  background: rgba(0, 0, 0, 0.2);
+  border-radius: 10px;
+  padding: 1rem;
+  margin: 1rem 0;
+}
+
+.detail-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.5rem 0;
+}
+
+.detail-row:not(:last-child) {
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.detail-label {
+  font-size: 0.85rem;
+  color: #888;
+}
+
+.detail-value {
+  font-family: 'SF Mono', 'Fira Code', monospace;
+  font-size: 0.85rem;
+  color: #14f195;
+}
+
+/* ==================== */
+/* My Vaults Styles */
+/* ==================== */
+.my-vaults {
+  min-height: 300px;
+}
+
+.vaults-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 1rem;
+}
+
+.vaults-header h2 {
+  margin: 0;
+}
+
+.vaults-actions {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.import-btn {
+  padding: 0.4rem 0.8rem;
+  font-size: 0.8rem;
+  background: rgba(153, 69, 255, 0.1);
+  color: #9945ff;
+  border-radius: 6px;
+}
+
+.import-btn:hover {
+  background: rgba(153, 69, 255, 0.2);
+}
+
+.import-section {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  background: rgba(0, 0, 0, 0.2);
+  border-radius: 10px;
+  padding: 1rem;
+  margin-bottom: 1rem;
+}
+
+.import-section input {
+  padding: 0.75rem 1rem;
+  font-size: 0.9rem;
+}
+
+.import-hint {
+  font-size: 0.8rem;
+  color: #888;
+  margin: 0;
+}
+
+.error.small {
+  font-size: 0.8rem;
+  padding: 0.5rem 0.75rem;
+  margin: 0;
+}
+
+button.small {
+  padding: 0.6rem 1rem;
+  font-size: 0.85rem;
+}
+
+.empty-state {
+  text-align: center;
+  padding: 3rem 1rem;
+}
+
+.empty-icon {
+  color: #444;
+  margin-bottom: 1rem;
+}
+
+.empty-state p {
+  margin: 0;
+  color: #888;
+}
+
+.empty-state .hint {
+  font-size: 0.85rem;
+  color: #666;
+  margin-top: 0.5rem;
+}
+
+.vaults-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.vault-card {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: rgba(0, 0, 0, 0.2);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  border-radius: 12px;
+  padding: 1rem 1.25rem;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.vault-card:hover {
+  background: rgba(0, 0, 0, 0.3);
+  border-color: rgba(153, 69, 255, 0.3);
+}
+
+.vault-info {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.vault-address {
+  font-family: 'SF Mono', 'Fira Code', monospace;
+  font-size: 0.95rem;
+  color: #14f195;
+}
+
+.vault-meta {
+  display: flex;
+  gap: 1rem;
+  font-size: 0.8rem;
+  color: #888;
+}
+
+.threshold {
+  background: rgba(153, 69, 255, 0.1);
+  color: #9945ff;
+  padding: 0.15rem 0.5rem;
+  border-radius: 4px;
+}
+
+.balance {
+  color: #14f195;
+}
+
+.vault-status {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.pending-badge {
+  background: rgba(245, 158, 11, 0.15);
+  color: #f59e0b;
+  padding: 0.25rem 0.5rem;
+  border-radius: 4px;
+  font-size: 0.75rem;
+  font-weight: 500;
+}
+
+.chevron {
+  color: #666;
+}
+
+.vault-loading,
+.vault-error {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.error-text {
+  color: #ef4444;
+  font-size: 0.8rem;
+}
+
+/* ==================== */
+/* Vault Detail Styles */
+/* ==================== */
+.vault-detail {
+  max-width: 560px;
+}
+
+.vault-detail-header {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+
+.back-btn {
+  padding: 0.5rem 0.75rem;
+  font-size: 0.85rem;
+  background: rgba(255, 255, 255, 0.05);
+  color: #888;
+  border-radius: 8px;
+}
+
+.back-btn:hover {
+  background: rgba(255, 255, 255, 0.1);
+  color: #fff;
+}
+
+.vault-detail-header h1 {
+  flex: 1;
+  text-align: left;
+  margin: 0;
+  font-size: 1.25rem;
+}
+
+/* Vault Addresses Section */
+.vault-addresses {
+  background: rgba(0, 0, 0, 0.2);
+  border-radius: 12px;
+  padding: 0.75rem;
+  margin-bottom: 1rem;
+}
+
+.address-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.75rem;
+  border-radius: 8px;
+}
+
+.address-row.treasury {
+  background: linear-gradient(135deg, rgba(20, 241, 149, 0.1), rgba(16, 185, 129, 0.05));
+  border: 1px solid rgba(20, 241, 149, 0.2);
+  margin-top: 0.5rem;
+}
+
+.address-info {
+  display: flex;
+  flex-direction: column;
+  gap: 0.15rem;
+}
+
+.address-label {
+  font-size: 0.85rem;
+  font-weight: 500;
+  color: #fff;
+}
+
+.address-hint {
+  font-size: 0.7rem;
+  color: #888;
+}
+
+.address-value-row {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.address-value {
+  font-family: 'SF Mono', 'Fira Code', monospace;
+  font-size: 0.85rem;
+  color: #14f195;
+  background: rgba(0, 0, 0, 0.2);
+  padding: 0.4rem 0.6rem;
+  border-radius: 6px;
+}
+
+/* Vault Stats Banner */
+.vault-stats-banner {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  background: linear-gradient(135deg, rgba(153, 69, 255, 0.1), rgba(124, 58, 237, 0.05));
+  border: 1px solid rgba(153, 69, 255, 0.2);
+  border-radius: 12px;
+  padding: 1rem 1.25rem;
+  margin-bottom: 1rem;
+}
+
+.stat-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.25rem;
+}
+
+.stat-item .stat-value {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: #fff;
+}
+
+.stat-item .stat-label {
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  color: #888;
+  letter-spacing: 0.05em;
+}
+
+.stat-item:last-child {
+  margin-left: auto;
+}
+
+/* Legacy vault-info-banner (keep for compatibility) */
+.vault-info-banner {
+  display: flex;
+  gap: 1rem;
+  background: linear-gradient(135deg, rgba(153, 69, 255, 0.1), rgba(20, 241, 149, 0.05));
+  border: 1px solid rgba(153, 69, 255, 0.2);
+  border-radius: 12px;
+  padding: 1rem;
+  margin-bottom: 1rem;
+}
+
+.info-item {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.info-item .label {
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  color: #888;
+  letter-spacing: 0.05em;
+}
+
+.info-item .value {
+  font-size: 0.95rem;
+  color: #fff;
+  font-family: 'SF Mono', 'Fira Code', monospace;
+}
+
+.fund-info {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: rgba(0, 0, 0, 0.2);
+  border-radius: 8px;
+  padding: 0.75rem 1rem;
+  margin-bottom: 1rem;
+  font-size: 0.85rem;
+  color: #888;
+}
+
+.fund-info .copy-btn.small {
+  padding: 0.3rem 0.6rem;
+  font-size: 0.75rem;
+}
+
+/* Proposals List */
+.proposals-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.proposal-card {
+  background: rgba(0, 0, 0, 0.2);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  border-radius: 12px;
+  padding: 1rem;
+}
+
+.proposal-card.executed {
+  opacity: 0.6;
+}
+
+.proposal-card.rejected {
+  opacity: 0.6;
+}
+
+.proposal-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 0.75rem;
+}
+
+.proposal-id {
+  font-family: 'SF Mono', 'Fira Code', monospace;
+  font-size: 0.9rem;
+  color: #9945ff;
+  font-weight: 600;
+}
+
+.status-badge {
+  padding: 0.2rem 0.6rem;
+  border-radius: 4px;
+  font-size: 0.75rem;
+  font-weight: 500;
+  text-transform: uppercase;
+}
+
+.status-badge.active {
+  background: rgba(245, 158, 11, 0.15);
+  color: #f59e0b;
+}
+
+.status-badge.approved {
+  background: rgba(20, 241, 149, 0.15);
+  color: #14f195;
+}
+
+.status-badge.executed {
+  background: rgba(100, 100, 100, 0.15);
+  color: #888;
+}
+
+.status-badge.rejected {
+  background: rgba(239, 68, 68, 0.15);
+  color: #ef4444;
+}
+
+.proposal-body {
+  margin-bottom: 0.75rem;
+}
+
+.votes {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  font-size: 0.85rem;
+}
+
+.approvals {
+  color: #14f195;
+}
+
+.rejections {
+  color: #ef4444;
+}
+
+.votes .threshold {
+  background: none;
+  color: #888;
+  padding: 0;
+  font-size: 0.8rem;
+}
+
+.proposal-actions {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding-top: 0.75rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.approve-btn {
+  padding: 0.5rem 1rem;
+  font-size: 0.8rem;
+  background: rgba(20, 241, 149, 0.15);
+  color: #14f195;
+  border-radius: 6px;
+}
+
+.approve-btn:hover:not(:disabled) {
+  background: rgba(20, 241, 149, 0.25);
+}
+
+.reject-btn {
+  padding: 0.5rem 1rem;
+  font-size: 0.8rem;
+  background: rgba(239, 68, 68, 0.15);
+  color: #ef4444;
+  border-radius: 6px;
+}
+
+.reject-btn:hover:not(:disabled) {
+  background: rgba(239, 68, 68, 0.25);
+}
+
+.execute-btn {
+  padding: 0.5rem 1rem;
+  font-size: 0.8rem;
+  background: linear-gradient(135deg, #9945ff 0%, #7c3aed 100%);
+  color: #fff;
+  border-radius: 6px;
+}
+
+.execute-btn:hover:not(:disabled) {
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(153, 69, 255, 0.3);
+}
+
+.voted-label {
+  font-size: 0.8rem;
+  color: #888;
+  margin-left: auto;
+}
+
+/* Transfer Form */
+.transfer-form h2 {
+  margin-bottom: 1rem;
+}
+
+/* Members List */
+.members-list h2 {
+  margin-bottom: 1rem;
+}
+
+.member-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: rgba(0, 0, 0, 0.2);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  border-radius: 10px;
+  padding: 0.75rem 1rem;
+  margin-bottom: 0.5rem;
+}
+
+.member-item.current {
+  border-color: rgba(153, 69, 255, 0.3);
+  background: rgba(153, 69, 255, 0.05);
+}
+
+.member-info {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.member-address {
+  font-family: 'SF Mono', 'Fira Code', monospace;
+  font-size: 0.9rem;
+  color: #14f195;
+}
+
+.you-badge {
+  background: rgba(153, 69, 255, 0.2);
+  color: #9945ff;
+  padding: 0.1rem 0.4rem;
+  border-radius: 4px;
+  font-size: 0.7rem;
+  font-weight: 500;
+  margin-left: 0.5rem;
+}
+
+.member-permissions {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.perm-badge {
+  padding: 0.2rem 0.5rem;
+  border-radius: 4px;
+  font-size: 0.7rem;
+  font-weight: 500;
+}
+
+.perm-badge.propose {
+  background: rgba(153, 69, 255, 0.15);
+  color: #9945ff;
+}
+
+.perm-badge.vote {
+  background: rgba(20, 241, 149, 0.15);
+  color: #14f195;
+}
+
+.perm-badge.execute {
+  background: rgba(245, 158, 11, 0.15);
+  color: #f59e0b;
+}
+
+/* ==================== */
+/* Responsive */
+/* ==================== */
+@media (max-width: 480px) {
+  .card {
+    padding: 1.5rem;
+  }
+
+  h1 {
+    font-size: 1.5rem;
+  }
+
+  .key-value.secret-key {
+    font-size: 0.65rem;
+  }
+
+  .token-amount {
+    font-size: 1.1rem;
+  }
+
+  .top-nav {
+    flex-wrap: wrap;
+  }
+
+  .nav-btn {
+    flex: 1 1 40%;
+    padding: 0.6rem 0.75rem;
+    font-size: 0.8rem;
+  }
+
+  .nav-lock {
+    flex: 0;
+  }
+
+  .vault-info-banner {
+    flex-direction: column;
+    gap: 0.75rem;
+  }
+
+  .info-item {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .vault-addresses .address-row {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.5rem;
+  }
+
+  .address-value-row {
+    width: 100%;
+    justify-content: space-between;
+  }
+
+  .vault-stats-banner {
+    flex-wrap: wrap;
+    gap: 1rem;
+  }
+
+  .stat-item:last-child {
+    margin-left: 0;
+    width: 100%;
+    margin-top: 0.5rem;
+  }
+
+  .stat-item:last-child .share-vault-btn {
+    width: 100%;
+  }
+
+  .permissions {
+    flex-wrap: wrap;
+    gap: 0.5rem;
+  }
+
+  .votes {
+    flex-wrap: wrap;
+    gap: 0.5rem;
+  }
+
+  .proposal-actions {
+    flex-wrap: wrap;
+  }
+
+  .member-item {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.5rem;
+  }
+}
+
+/* ==================== */
+/* Landing Page Styles */
+/* ==================== */
+.landing-card {
+  max-width: 560px;
+  padding: 2.5rem;
+  text-align: center;
+}
+
+.landing-options {
+  display: flex;
+  gap: 1rem;
+  margin: 2rem 0;
+}
+
+.option-card {
+  flex: 1;
+  background: rgba(0, 0, 0, 0.2);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  border-radius: 16px;
+  padding: 1.5rem;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  text-align: center;
+}
+
+.option-card:hover {
+  background: rgba(0, 0, 0, 0.3);
+  border-color: rgba(153, 69, 255, 0.3);
+  transform: translateY(-2px);
+}
+
+.option-icon {
+  width: 56px;
+  height: 56px;
+  margin: 0 auto 1rem;
+  background: linear-gradient(135deg, rgba(153, 69, 255, 0.2), rgba(124, 58, 237, 0.2));
+  border-radius: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #9945ff;
+}
+
+.option-icon.phantom {
+  background: linear-gradient(135deg, rgba(20, 241, 149, 0.2), rgba(16, 185, 129, 0.2));
+  color: #14f195;
+}
+
+.option-icon svg {
+  width: 28px;
+  height: 28px;
+}
+
+.option-card h3 {
+  margin: 0 0 0.5rem;
+  font-size: 1rem;
+  color: #fff;
+  text-transform: none;
+  letter-spacing: normal;
+}
+
+.option-card p {
+  margin: 0 0 1rem;
+  font-size: 0.85rem;
+  color: #888;
+  line-height: 1.4;
+}
+
+.option-action {
+  display: inline-block;
+  padding: 0.5rem 1.25rem;
+  font-size: 0.85rem;
+  font-weight: 500;
+  background: linear-gradient(135deg, #9945ff 0%, #7c3aed 100%);
+  color: #fff;
+  border-radius: 8px;
+  transition: all 0.2s ease;
+}
+
+.option-card:hover .option-action {
+  box-shadow: 0 4px 12px rgba(153, 69, 255, 0.3);
+}
+
+.landing-hint {
+  font-size: 0.85rem;
+  color: #666;
+  margin: 0;
+}
+
+/* ==================== */
+/* External Wallet Styles */
+/* ==================== */
+.external-connect-card {
+  max-width: 420px;
+  text-align: center;
+}
+
+.back-link {
+  display: block;
+  text-align: left;
+  padding: 0.5rem 0;
+  font-size: 0.85rem;
+  background: transparent;
+  color: #888;
+  margin-bottom: 1rem;
+}
+
+.back-link:hover {
+  color: #fff;
+}
+
+.wallet-button-container {
+  display: flex;
+  justify-content: center;
+  margin-top: 1.5rem;
+}
+
+/* Wallet adapter button overrides */
+.wallet-adapter-button {
+  background: linear-gradient(135deg, #9945ff 0%, #7c3aed 100%) !important;
+  border-radius: 12px !important;
+  height: 48px !important;
+  font-size: 1rem !important;
+}
+
+.wallet-adapter-button:hover {
+  background: linear-gradient(135deg, #8a3de8 0%, #6d2fc5 100%) !important;
+}
+
+/* External Dashboard */
+.external-dashboard-card {
+  max-width: 560px;
+}
+
+.external-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 1rem;
+}
+
+.wallet-info {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.connected-as {
+  text-align: center;
+  color: #888;
+  font-size: 0.9rem;
+  margin: 0 0 1.5rem;
+}
+
+.connected-as .address {
+  color: #14f195;
+  font-family: 'SF Mono', 'Fira Code', monospace;
+}
+
+.external-tabs {
+  display: flex;
+  gap: 0.5rem;
+  background: rgba(0, 0, 0, 0.2);
+  border-radius: 10px;
+  padding: 0.25rem;
+  margin-bottom: 1.5rem;
+}
+
+.external-tab {
+  flex: 1;
+  padding: 0.75rem;
+  font-size: 0.875rem;
+  background: transparent;
+  color: #888;
+  border-radius: 8px;
+}
+
+.external-tab:hover:not(:disabled) {
+  color: #fff;
+}
+
+.external-tab:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+
+.external-tab.active {
+  background: rgba(153, 69, 255, 0.2);
+  color: #fff;
+}
+
+.external-content {
+  min-height: 300px;
+}
+
+.external-vault-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.external-vault-card {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: rgba(0, 0, 0, 0.2);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  border-radius: 12px;
+  padding: 1rem 1.25rem;
+}
+
+.vault-main-info {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.vault-stats {
+  display: flex;
+  gap: 1rem;
+  font-size: 0.8rem;
+}
+
+.vault-threshold {
+  background: rgba(153, 69, 255, 0.1);
+  color: #9945ff;
+  padding: 0.15rem 0.5rem;
+  border-radius: 4px;
+}
+
+.vault-balance {
+  color: #14f195;
+}
+
+.vault-pending {
+  background: rgba(245, 158, 11, 0.15);
+  color: #f59e0b;
+  padding: 0.15rem 0.5rem;
+  border-radius: 4px;
+}
+
+.vault-actions {
+  display: flex;
+  gap: 0.5rem;
+  align-items: center;
+}
+
+.refresh-button {
+  width: 100%;
+  padding: 0.75rem;
+  margin-top: 1rem;
+  font-size: 0.9rem;
+  background: rgba(255, 255, 255, 0.05);
+  color: #888;
+  border-radius: 10px;
+}
+
+.refresh-button:hover:not(:disabled) {
+  background: rgba(255, 255, 255, 0.1);
+  color: #fff;
+}
+
+/* External Vault Detail */
+.external-vault-detail {
+  max-width: 560px;
+}
+
+.vault-banner {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  background: linear-gradient(135deg, rgba(153, 69, 255, 0.15), rgba(20, 241, 149, 0.05));
+  border: 1px solid rgba(153, 69, 255, 0.2);
+  border-radius: 12px;
+  padding: 1.25rem;
+  margin-bottom: 1rem;
+}
+
+.vault-banner-info h1 {
+  margin: 0 0 0.5rem;
+  text-align: left;
+  font-size: 1.25rem;
+}
+
+.vault-address-row {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.vault-address-row code {
+  font-family: 'SF Mono', 'Fira Code', monospace;
+  font-size: 0.9rem;
+  color: #14f195;
+}
+
+.copy-btn.small {
+  padding: 0.3rem 0.6rem;
+  font-size: 0.75rem;
+}
+
+.vault-banner-stats {
+  display: flex;
+  gap: 1.5rem;
+}
+
+.stat {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.25rem;
+}
+
+.stat-value {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: #fff;
+}
+
+.stat-label {
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  color: #888;
+  letter-spacing: 0.05em;
+}
+
+/* Share Button */
+.share-btn {
+  padding: 0.4rem 0.8rem;
+  font-size: 0.8rem;
+  background: rgba(153, 69, 255, 0.1);
+  color: #9945ff;
+  border-radius: 6px;
+}
+
+.share-btn:hover {
+  background: rgba(153, 69, 255, 0.2);
+}
+
+.share-vault-btn {
+  padding: 0.5rem 1rem;
+  font-size: 0.8rem;
+  background: rgba(153, 69, 255, 0.15);
+  color: #9945ff;
+  border-radius: 6px;
+}
+
+.share-vault-btn:hover {
+  background: rgba(153, 69, 255, 0.25);
+}
+
+.share-item {
+  display: flex;
+  align-items: flex-end;
+  justify-content: flex-end;
+}
+
+.share-proposal-btn {
+  display: block;
+  width: 100%;
+  padding: 0.75rem 1.5rem;
+  margin-top: 1rem;
+  background: rgba(153, 69, 255, 0.15);
+  color: #9945ff;
+  border-radius: 10px;
+  font-size: 0.9rem;
+}
+
+.share-proposal-btn:hover {
+  background: rgba(153, 69, 255, 0.25);
+}
+
+/* Proposal Highlight */
+.proposal-card.highlighted {
+  border-color: rgba(153, 69, 255, 0.5);
+  box-shadow: 0 0 0 2px rgba(153, 69, 255, 0.2);
+}
+
+/* User Vote Indicator */
+.user-vote {
+  font-size: 0.8rem;
+  padding: 0.25rem 0.5rem;
+  border-radius: 4px;
+  margin-bottom: 0.5rem;
+  display: inline-block;
+}
+
+.user-vote.approved {
+  background: rgba(20, 241, 149, 0.15);
+  color: #14f195;
+}
+
+.user-vote.rejected {
+  background: rgba(239, 68, 68, 0.15);
+  color: #ef4444;
+}
+
+/* Proposal Status Colors (external) */
+.proposal-status {
+  padding: 0.2rem 0.6rem;
+  border-radius: 4px;
+  font-size: 0.75rem;
+  font-weight: 500;
+  text-transform: uppercase;
+}
+
+.proposal-status.active {
+  background: rgba(245, 158, 11, 0.15);
+  color: #f59e0b;
+}
+
+.proposal-status.approved {
+  background: rgba(20, 241, 149, 0.15);
+  color: #14f195;
+}
+
+.proposal-status.executed {
+  background: rgba(100, 100, 100, 0.15);
+  color: #888;
+}
+
+.proposal-status.rejected {
+  background: rgba(239, 68, 68, 0.15);
+  color: #ef4444;
+}
+
+.proposal-votes {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  font-size: 0.85rem;
+  margin-bottom: 0.5rem;
+}
+
+.proposal-votes .approvals {
+  color: #14f195;
+}
+
+.proposal-votes .rejections {
+  color: #ef4444;
+}
+
+.proposal-votes .needed {
+  color: #888;
+  font-size: 0.8rem;
+}
+
+.proposal-index {
+  font-family: 'SF Mono', 'Fira Code', monospace;
+  font-size: 0.9rem;
+  color: #9945ff;
+  font-weight: 600;
+}
+
+/* External Create Vault */
+.external-create-vault {
+  padding-top: 0.5rem;
+}
+
+.external-create-vault h3 {
+  margin: 0 0 0.5rem;
+  font-size: 1.1rem;
+  color: #fff;
+  text-transform: none;
+  letter-spacing: normal;
+}
+
+.create-description {
+  font-size: 0.9rem;
+  color: #888;
+  margin: 0 0 1.5rem;
+}
+
+.member-input-card {
+  background: rgba(0, 0, 0, 0.2);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  border-radius: 12px;
+  padding: 1rem;
+  margin-bottom: 0.75rem;
+}
+
+.member-input-card input {
+  padding: 0.75rem 1rem;
+  font-size: 0.9rem;
+  margin-bottom: 0.75rem;
+}
+
+.member-input-card input:disabled {
+  opacity: 0.6;
+}
+
+.remove-member-btn {
+  width: 24px;
+  height: 24px;
+  padding: 0;
+  font-size: 1rem;
+  background: rgba(239, 68, 68, 0.1);
+  color: #ef4444;
+  border-radius: 4px;
+  line-height: 1;
+}
+
+.remove-member-btn:hover {
+  background: rgba(239, 68, 68, 0.2);
+}
+
+.permissions-row {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.permission-checkbox {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-size: 0.85rem;
+  color: #888;
+  cursor: pointer;
+}
+
+.permission-checkbox input[type="checkbox"] {
+  width: 16px;
+  height: 16px;
+  padding: 0;
+  margin: 0;
+  accent-color: #9945ff;
+}
+
+.add-member-btn {
+  width: 100%;
+  padding: 0.75rem;
+  font-size: 0.9rem;
+  background: rgba(20, 241, 149, 0.1);
+  color: #14f195;
+  border-radius: 10px;
+  margin-bottom: 1.5rem;
+}
+
+.add-member-btn:hover {
+  background: rgba(20, 241, 149, 0.2);
+}
+
+.create-button {
+  width: 100%;
+  margin-top: 1rem;
+}
+
+.create-vault-success {
+  text-align: center;
+  padding: 2rem 1rem;
+}
+
+.create-vault-success h3 {
+  margin: 1rem 0 0.5rem;
+  font-size: 1.25rem;
+  color: #fff;
+  text-transform: none;
+  letter-spacing: normal;
+}
+
+.create-vault-success p {
+  margin: 0 0 1rem;
+  color: #888;
+}
+
+.create-vault-success .success-details {
+  text-align: left;
+  margin: 1.5rem 0;
+}
+
+.create-vault-success .success-details label {
+  display: block;
+  font-size: 0.75rem;
+  color: #888;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin-bottom: 0.5rem;
+}
+
+.create-vault-success .success-details code {
+  display: block;
+  font-family: 'SF Mono', 'Fira Code', monospace;
+  font-size: 0.85rem;
+  color: #14f195;
+  background: rgba(0, 0, 0, 0.2);
+  padding: 0.75rem 1rem;
+  border-radius: 8px;
+  word-break: break-all;
+}
+
+/* Transfer Form (external) */
+.transfer-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.transfer-description {
+  font-size: 0.9rem;
+  color: #888;
+  margin: 0 0 1rem;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.form-group label {
+  font-size: 0.85rem;
+  color: #888;
+}
+
+.available-balance {
+  font-size: 0.8rem;
+  color: #666;
+}
+
+.transfer-success {
+  text-align: center;
+  padding: 2rem 1rem;
+}
+
+.transfer-success h4 {
+  margin: 1rem 0 0.5rem;
+  font-size: 1.1rem;
+  color: #fff;
+}
+
+.transfer-success p {
+  margin: 0 0 1rem;
+  color: #888;
+}
+
+/* Members List (external) */
+.members-list {
+  padding-top: 0.5rem;
+}
+
+.members-list h3 {
+  margin: 0 0 1rem;
+  font-size: 1.1rem;
+  color: #fff;
+  text-transform: none;
+  letter-spacing: normal;
+}
+
+.member-card {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: rgba(0, 0, 0, 0.2);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  border-radius: 10px;
+  padding: 0.75rem 1rem;
+  margin-bottom: 0.5rem;
+}
+
+.member-card .member-address {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.member-card .member-address code {
+  font-family: 'SF Mono', 'Fira Code', monospace;
+  font-size: 0.9rem;
+  color: #14f195;
+}
+
+.member-permissions .permission-badge {
+  padding: 0.2rem 0.5rem;
+  border-radius: 4px;
+  font-size: 0.7rem;
+  font-weight: 500;
+  margin-left: 0.25rem;
+}
+
+.permission-badge.propose {
+  background: rgba(153, 69, 255, 0.15);
+  color: #9945ff;
+}
+
+.permission-badge.vote {
+  background: rgba(20, 241, 149, 0.15);
+  color: #14f195;
+}
+
+.permission-badge.execute {
+  background: rgba(245, 158, 11, 0.15);
+  color: #f59e0b;
+}
+
+/* Error State */
+.error-state {
+  text-align: center;
+  padding: 2rem 1rem;
+}
+
+.error-state h2 {
+  margin: 0 0 0.5rem;
+  font-size: 1.25rem;
+  color: #ef4444;
+}
+
+.error-state p {
+  margin: 0;
+  color: #888;
+}
+
+.error-text {
+  color: #ef4444;
+  font-size: 0.85rem;
+  margin-top: 0.5rem;
+}
+
+/* Import form styling */
+.import-form {
+  display: flex;
+  gap: 0.75rem;
+}
+
+.import-form input {
+  flex: 1;
+  padding: 0.75rem 1rem;
+}
+
+.import-form button {
+  flex-shrink: 0;
+}
+
+/* External responsive */
+@media (max-width: 560px) {
+  .landing-options {
+    flex-direction: column;
+  }
+
+  .vault-banner {
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .vault-banner-stats {
+    width: 100%;
+    justify-content: space-around;
+  }
+
+  .external-vault-card {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1rem;
+  }
+
+  .vault-actions {
+    width: 100%;
+    justify-content: flex-end;
+  }
+
+  .import-form {
+    flex-direction: column;
+  }
+
+  .import-form button {
+    width: 100%;
+  }
+}
