@@ -10,6 +10,7 @@
     "lint": "eslint .",
     "preview": "vite preview",
     "skill:create": "tsx skills/create-wallet.ts",
+    "skill:backup": "tsx skills/backup-wallet.ts",
     "skill:unlock": "tsx skills/unlock-wallet.ts",
     "skill:address": "tsx skills/get-address.ts",
     "skill:status": "tsx skills/check-status.ts",

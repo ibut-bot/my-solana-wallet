@@ -30,6 +30,50 @@ A Solana wallet skill with full multisig support:
 
 **For high-value transactions, use the multisig vault feature** which requires multiple approvals before funds can be moved.
 
+## ⚠️ Important: Single Wallet Limitation
+
+This skill currently supports **one wallet at a time** in the default storage location.
+
+**Creating a new wallet will overwrite your existing wallet file.**
+
+To avoid losing funds:
+1. **Always backup** your wallet before creating a new one:
+   ```bash
+   cp wallet-data/c29sYW5hX3dhbGxldA.json wallet-data/my-wallet-backup.json
+   ```
+2. **Export your secret key** immediately after creation:
+   ```bash
+   npm run skill:unlock -- --password "yourpass" --show-secret
+   # Save the secret key somewhere secure!
+   ```
+3. To use multiple wallets, use different `WALLET_DATA_DIR` environments
+
+## Best Practices
+
+### After Creating a Wallet — IMMEDIATELY:
+
+1. **Export the secret key:**
+   ```bash
+   npm run skill:unlock -- --password "yourpass" --show-secret
+   ```
+   Save the `secretKey` output somewhere secure (password manager, encrypted file).
+
+2. **Backup the wallet file:**
+   ```bash
+   npm run skill:backup -- --password "yourpass"
+   ```
+   Or manually:
+   ```bash
+   cp wallet-data/c29sYW5hX3dhbGxldA.json ~/backups/solana-wallet-$(date +%Y%m%d).json
+   ```
+
+3. **Verify you can restore:**
+   ```bash
+   npm run skill:unlock -- --password "yourpass"
+   ```
+
+⚠️ Without the secret key or wallet file backup, your funds are unrecoverable.
+
 ## Capabilities
 
 ### 1. Create Wallet
@@ -173,7 +217,8 @@ Located in the `skills/` directory:
 
 | Script | Purpose | Arguments | Returns |
 |--------|---------|-----------|---------|
-| `create-wallet.ts` | Create new encrypted wallet | `--name`, `--password` | Address + status |
+| `create-wallet.ts` | Create new encrypted wallet | `--name`, `--password`, `[--force]` | Address + status |
+| `backup-wallet.ts` | Backup wallet file + export key | `--password` | Backup path + secret key |
 | `get-address.ts` | Get public address | (none) | Address string |
 | `get-balance.ts` | Get SOL + token balances (with names) | (none) | Balances + symbols |
 | `send-sol.ts` | Send SOL | `--to`, `--amount`, `--password` | TX hash |
@@ -208,6 +253,12 @@ Located in the `skills/multisig/` directory:
 ```bash
 # Create a new wallet
 npm run skill:create -- --name "My Wallet" --password "mySecurePassword123"
+
+# Create a new wallet (overwrite existing — requires --force)
+npm run skill:create -- --name "New Wallet" --password "mySecurePassword123" --force
+
+# Backup wallet (copies file + exports secret key)
+npm run skill:backup -- --password "mySecurePassword123"
 
 # Check if wallet exists
 npm run skill:status
