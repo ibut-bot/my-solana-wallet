@@ -3,7 +3,7 @@
  * CLI script to check if a wallet exists
  * 
  * Usage:
- *   npx ts-node src/skill/check-status.ts
+ *   npx tsx skills/check-status.ts
  */
 
 import { checkStatus, formatPublicKey } from './wallet.js'

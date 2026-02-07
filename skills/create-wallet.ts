@@ -3,7 +3,7 @@
  * CLI script to create a new encrypted Solana wallet
  * 
  * Usage:
- *   npx ts-node src/skill/create-wallet.ts --name "My Wallet" --password "secret123"
+ *   npx tsx skills/create-wallet.ts --name "My Wallet" --password "secret123"
  */
 
 import { createWallet } from './wallet.js'

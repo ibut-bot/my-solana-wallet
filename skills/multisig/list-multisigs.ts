@@ -9,7 +9,7 @@
 
 import { getAddress } from '../wallet.js'
 import { getConnection } from '../rpc.js'
-import { getStoredMultisigsAsync, getMultisigAccount, getVaultBalance } from '../../utils/multisig.js'
+import { getStoredMultisigsAsync, getMultisigAccount, getVaultBalance } from '../utils/multisig.js'
 import { PublicKey } from '@solana/web3.js'
 
 async function main() {

@@ -3,11 +3,11 @@
  * CLI script to send SPL tokens to another wallet
  * 
  * Usage:
- *   npx tsx src/skill/send-token.ts --mint <token_mint_or_symbol> --to <address> --amount <amount> --password <pwd>
+ *   npx tsx skills/send-token.ts --mint <token_mint_or_symbol> --to <address> --amount <amount> --password <pwd>
  * 
  * Examples:
- *   npx tsx src/skill/send-token.ts --mint USDC --to 7abc... --amount 10 --password secret
- *   npx tsx src/skill/send-token.ts --mint EPjFWdd5AufqSSqeM2qN1xzybapC8G4wEGGkZwyTDt1v --to 7abc... --amount 10 --password secret
+ *   npx tsx skills/send-token.ts --mint USDC --to 7abc... --amount 10 --password secret
+ *   npx tsx skills/send-token.ts --mint EPjFWdd5AufqSSqeM2qN1xzybapC8G4wEGGkZwyTDt1v --to 7abc... --amount 10 --password secret
  */
 
 import { PublicKey } from '@solana/web3.js'

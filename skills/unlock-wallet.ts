@@ -3,8 +3,8 @@
  * CLI script to unlock wallet and retrieve keypair info
  * 
  * Usage:
- *   npx ts-node src/skill/unlock-wallet.ts --password "secret123"
- *   npx ts-node src/skill/unlock-wallet.ts --password "secret123" --show-secret
+ *   npx tsx skills/unlock-wallet.ts --password "secret123"
+ *   npx tsx skills/unlock-wallet.ts --password "secret123" --show-secret
  */
 
 import { unlockWallet, formatPublicKey } from './wallet.js'

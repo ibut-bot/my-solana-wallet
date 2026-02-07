@@ -13,8 +13,8 @@
 
 import { PublicKey } from '@solana/web3.js'
 import { getConnection } from '../rpc.js'
-import { getMultisigAccount, getVaultBalance, getProposals } from '../../utils/multisig.js'
-import { getVaultShareLink } from '../../utils/multisigWalletAdapter.js'
+import { getMultisigAccount, getVaultBalance, getProposals } from '../utils/multisig.js'
+import { getVaultShareLink } from '../utils/share-links.js'
 
 async function main() {
   const args = process.argv.slice(2)

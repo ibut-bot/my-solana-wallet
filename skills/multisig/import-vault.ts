@@ -16,7 +16,7 @@
 import { PublicKey } from '@solana/web3.js'
 import { getAddress } from '../wallet.js'
 import { getConnection } from '../rpc.js'
-import { getMultisigAccount, saveMultisigAddressAsync, getStoredMultisigsAsync } from '../../utils/multisig.js'
+import { getMultisigAccount, saveMultisigAddressAsync, getStoredMultisigsAsync } from '../utils/multisig.js'
 
 function extractVaultAddress(input: string): string | null {
   const trimmed = input.trim()

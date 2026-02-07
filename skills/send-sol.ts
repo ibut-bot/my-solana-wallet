@@ -3,7 +3,7 @@
  * CLI script to send SOL to another wallet
  * 
  * Usage:
- *   npx tsx src/skill/send-sol.ts --to <address> --amount <sol> --password <pwd>
+ *   npx tsx skills/send-sol.ts --to <address> --amount <sol> --password <pwd>
  */
 
 import {

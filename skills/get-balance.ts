@@ -3,7 +3,7 @@
  * CLI script to get wallet balances (SOL + SPL tokens)
  * 
  * Usage:
- *   npx tsx src/skill/get-balance.ts
+ *   npx tsx skills/get-balance.ts
  */
 
 import { PublicKey, LAMPORTS_PER_SOL } from '@solana/web3.js'

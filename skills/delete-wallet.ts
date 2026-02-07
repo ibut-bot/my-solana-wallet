@@ -3,7 +3,7 @@
  * CLI script to delete wallet (requires --confirm flag)
  * 
  * Usage:
- *   npx ts-node src/skill/delete-wallet.ts --confirm
+ *   npx tsx skills/delete-wallet.ts --confirm
  */
 
 import { deleteWallet, getAddress } from './wallet.js'

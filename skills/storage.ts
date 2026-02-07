@@ -7,7 +7,7 @@ import * as path from 'path'
 import { fileURLToPath } from 'url'
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url))
-export const WALLET_DATA_DIR = path.join(__dirname, '..', '..', 'wallet-data')
+export const WALLET_DATA_DIR = path.join(__dirname, '..', 'wallet-data')
 
 /**
  * File-based storage for wallet data

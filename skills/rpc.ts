@@ -17,7 +17,7 @@ import * as path from 'path'
 // Load .env silently - suppress dotenv verbose output
 const __dirname = path.dirname(fileURLToPath(import.meta.url))
 process.env.DOTENV_CONFIG_QUIET = 'true'
-config({ path: path.join(__dirname, '..', '..', '.env') })
+config({ path: path.join(__dirname, '..', '.env') })
 
 const DEFAULT_RPC_URL = 'https://api.mainnet-beta.solana.com'
 

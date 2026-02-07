@@ -19,8 +19,8 @@
 import { PublicKey, LAMPORTS_PER_SOL } from '@solana/web3.js'
 import { getKeypair } from '../wallet.js'
 import { getConnection } from '../rpc.js'
-import { createTransferProposal, getVaultBalance, getMultisigAccount } from '../../utils/multisig.js'
-import { getProposalShareLink } from '../../utils/multisigWalletAdapter.js'
+import { createTransferProposal, getVaultBalance, getMultisigAccount } from '../utils/multisig.js'
+import { getProposalShareLink } from '../utils/share-links.js'
 
 async function main() {
   const args = process.argv.slice(2)

@@ -140,7 +140,7 @@ src/
 
 ## Skill Documentation
 
-For detailed agent/AI integration, see [SKILL.md](./SKILL.md).
+For detailed agent/AI integration, see [SKILL.md](./skills/SKILL.md).
 
 ## Development
 

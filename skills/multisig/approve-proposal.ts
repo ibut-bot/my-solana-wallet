@@ -14,7 +14,7 @@
 import { PublicKey } from '@solana/web3.js'
 import { getKeypair } from '../wallet.js'
 import { getConnection } from '../rpc.js'
-import { approveProposal, getProposalStatus, getMultisigAccount } from '../../utils/multisig.js'
+import { approveProposal, getProposalStatus, getMultisigAccount } from '../utils/multisig.js'
 
 async function main() {
   const args = process.argv.slice(2)

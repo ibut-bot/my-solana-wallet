@@ -40,12 +40,12 @@ export {
   type MultisigVault,
   type VaultBalance,
   type ProposalInfo,
-} from '../../utils/multisig.js'
+} from '../utils/multisig.js'
 
 export {
   getProposalShareLink,
   getVaultShareLink,
-} from '../../utils/multisigWalletAdapter.js'
+} from '../utils/share-links.js'
 
 // RPC utilities
 export { getConnection, getRpcUrl, setRpcUrl, createConnection } from '../rpc.js'

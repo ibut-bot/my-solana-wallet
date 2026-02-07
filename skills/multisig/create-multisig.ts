@@ -17,8 +17,8 @@
 import { PublicKey, LAMPORTS_PER_SOL } from '@solana/web3.js'
 import { getKeypair } from '../wallet.js'
 import { getConnection } from '../rpc.js'
-import { createMultisigVault, getAllPermissions, saveMultisigAddressAsync } from '../../utils/multisig.js'
-import { getVaultShareLink } from '../../utils/multisigWalletAdapter.js'
+import { createMultisigVault, getAllPermissions, saveMultisigAddressAsync } from '../utils/multisig.js'
+import { getVaultShareLink } from '../utils/share-links.js'
 
 // Estimated rent for multisig creation (~0.003 SOL)
 const ESTIMATED_RENT = 0.003

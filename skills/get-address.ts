@@ -3,7 +3,7 @@
  * CLI script to get wallet public address (no password required)
  * 
  * Usage:
- *   npx ts-node src/skill/get-address.ts
+ *   npx tsx skills/get-address.ts
  */
 
 import { getAddress, formatPublicKey } from './wallet.js'

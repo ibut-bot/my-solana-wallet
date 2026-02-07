@@ -167,7 +167,7 @@ Generates a shareable link for a vault or proposal. This is a lightweight operat
 
 ## Scripts
 
-Located in `src/skill/` directory:
+Located in the `skills/` directory:
 
 ### Wallet Scripts
 
@@ -184,7 +184,7 @@ Located in `src/skill/` directory:
 
 ### Multisig Scripts
 
-Located in `src/skill/multisig/` directory:
+Located in the `skills/multisig/` directory:
 
 | Script | Purpose | Arguments | Returns |
 |--------|---------|-----------|---------|
@@ -594,8 +594,8 @@ import {
   checkStatus,
   deleteWallet,
   getKeypair,
-} from './skill/index.js'
-import { getConnection } from './skill/rpc.js'
+} from './skills/index.js'
+import { getConnection } from './skills/rpc.js'
 
 // Create new wallet
 const result = await createWallet('My Wallet', 'password123')
@@ -636,9 +636,9 @@ import {
   getStoredMultisigs,
   getVaultShareLink,
   getProposalShareLink,
-} from './skill/multisig/index.js'
-import { getKeypair } from './skill/index.js'
-import { getConnection } from './skill/rpc.js'
+} from './skills/multisig/index.js'
+import { getKeypair } from './skills/index.js'
+import { getConnection } from './skills/rpc.js'
 import { PublicKey, LAMPORTS_PER_SOL } from '@solana/web3.js'
 
 const connection = getConnection()
