@@ -1,12 +1,45 @@
 {
-  "name": "my-solana-wallet",
-  "private": true,
-  "version": "0.0.0",
+  "name": "slopwallet",
+  "version": "1.0.0",
+  "description": "Encrypted Solana wallet with multisig support - create wallets, send SOL/SPL tokens, and manage Squads multisig vaults",
   "type": "module",
+  "main": "./dist/skill/index.js",
+  "types": "./dist/skill/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/skill/index.d.ts",
+      "import": "./dist/skill/index.js"
+    },
+    "./multisig": {
+      "types": "./dist/skill/multisig/index.d.ts",
+      "import": "./dist/skill/multisig/index.js"
+    },
+    "./rpc": {
+      "types": "./dist/skill/rpc.d.ts",
+      "import": "./dist/skill/rpc.js"
+    }
+  },
+  "files": [
+    "dist/skill",
+    "skills",
+    "README.md",
+    "LICENSE"
+  ],
+  "keywords": [
+    "solana",
+    "wallet",
+    "crypto",
+    "multisig",
+    "squads",
+    "spl-token",
+    "web3"
+  ],
+  "license": "MIT",
   "scripts": {
     "dev": "vite",
     "build": "tsc -b && vite build",
     "build:skill": "tsc -p tsconfig.skill.json",
+    "prepublishOnly": "npm run build:skill",
     "lint": "eslint .",
     "preview": "vite preview",
     "skill:create": "tsx skills/create-wallet.ts",
@@ -31,28 +64,28 @@
   },
   "dependencies": {
     "@solana/spl-token": "^0.4.14",
+    "@solana/web3.js": "^1.98.4",
+    "@sqds/multisig": "^2.1.4",
+    "dotenv": "^17.2.3"
+  },
+  "devDependencies": {
+    "@eslint/js": "^9.39.1",
     "@solana/wallet-adapter-base": "^0.9.27",
     "@solana/wallet-adapter-react": "^0.15.39",
     "@solana/wallet-adapter-react-ui": "^0.9.39",
     "@solana/wallet-adapter-wallets": "^0.19.37",
-    "@solana/web3.js": "^1.98.4",
-    "@sqds/multisig": "^2.1.4",
-    "buffer": "^6.0.3",
-    "dotenv": "^17.2.3",
-    "react": "^19.2.0",
-    "react-dom": "^19.2.0",
-    "react-router-dom": "^7.13.0"
-  },
-  "devDependencies": {
-    "@eslint/js": "^9.39.1",
     "@types/node": "^24.10.1",
     "@types/react": "^19.2.5",
     "@types/react-dom": "^19.2.3",
     "@vitejs/plugin-react": "^5.1.1",
+    "buffer": "^6.0.3",
     "eslint": "^9.39.1",
     "eslint-plugin-react-hooks": "^7.0.1",
     "eslint-plugin-react-refresh": "^0.4.24",
     "globals": "^16.5.0",
+    "react": "^19.2.0",
+    "react-dom": "^19.2.0",
+    "react-router-dom": "^7.13.0",
     "tsx": "^4.19.0",
     "typescript": "~5.9.3",
     "typescript-eslint": "^8.46.4",

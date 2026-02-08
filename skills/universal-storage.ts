@@ -8,10 +8,8 @@
 
 import * as fs from 'fs/promises'
 import * as path from 'path'
-import { fileURLToPath } from 'url'
 
-const __dirname = path.dirname(fileURLToPath(import.meta.url))
-const STORAGE_DIR = path.join(__dirname, '..', 'wallet-data')
+const STORAGE_DIR = path.join(process.cwd(), 'wallet-data')
 
 /**
  * Check if running in browser environment

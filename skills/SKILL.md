@@ -1,5 +1,5 @@
 ---
-name: solana-local-wallet
+name: slopwallet
 description: Encrypted Solana wallet with multisig support - create wallets, send SOL/SPL tokens, and manage Squads multisig vaults
 license: MIT
 compatibility: openclaw
@@ -645,8 +645,8 @@ import {
   checkStatus,
   deleteWallet,
   getKeypair,
-} from './skills/index.js'
-import { getConnection } from './skills/rpc.js'
+} from 'slopwallet'
+import { getConnection } from 'slopwallet/rpc'
 
 // Create new wallet
 const result = await createWallet('My Wallet', 'password123')
@@ -687,9 +687,9 @@ import {
   getStoredMultisigs,
   getVaultShareLink,
   getProposalShareLink,
-} from './skills/multisig/index.js'
-import { getKeypair } from './skills/index.js'
-import { getConnection } from './skills/rpc.js'
+} from 'slopwallet/multisig'
+import { getKeypair } from 'slopwallet'
+import { getConnection } from 'slopwallet/rpc'
 import { PublicKey, LAMPORTS_PER_SOL } from '@solana/web3.js'
 
 const connection = getConnection()

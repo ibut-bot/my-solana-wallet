@@ -1,6 +1,12 @@
 # Solana Local Wallet
 
-A full-featured Solana wallet application with Squads multisig support. Includes a web UI and CLI skill scripts.
+A full-featured Solana wallet library with Squads multisig support. Installable via npm — no git clone needed.
+
+## Install
+
+```bash
+npm install slopwallet
+```
 
 ## Features
 
@@ -16,21 +22,72 @@ A full-featured Solana wallet application with Squads multisig support. Includes
 - **Approve/reject proposals** as a vault member
 - **Execute approved transactions**
 - **Shareable links** for easy collaboration
-- **External wallet support** (Phantom, Solflare, etc.)
 
 ## Quick Start
 
-```bash
-# Install dependencies
-npm install
+```typescript
+import {
+  createWallet,
+  unlockWallet,
+  getAddress,
+  checkStatus,
+  getKeypair,
+} from 'slopwallet'
+import { getConnection } from 'slopwallet/rpc'
 
-# Start the web UI
-npm run dev
+// Create a new encrypted wallet
+const result = await createWallet('My Wallet', 'securepass123')
+console.log('Address:', result.address)
 
-# Or use CLI scripts
-npm run skill:create -- --name "My Wallet" --password "securepass123"
-npm run skill:balance
+// Check balance
+const connection = getConnection()
+const keypair = await getKeypair('securepass123')
+const balance = await connection.getBalance(keypair.publicKey)
+console.log('Balance:', balance)
 ```
+
+### Multisig Usage
+
+```typescript
+import { getKeypair } from 'slopwallet'
+import { getConnection } from 'slopwallet/rpc'
+import {
+  createMultisigVault,
+  getAllPermissions,
+  getVaultShareLink,
+} from 'slopwallet/multisig'
+import { PublicKey } from '@solana/web3.js'
+
+const connection = getConnection()
+const keypair = await getKeypair('securepass123')
+
+const members = [
+  { publicKey: keypair.publicKey, permissions: getAllPermissions() },
+  { publicKey: new PublicKey('Member2...'), permissions: getAllPermissions() },
+]
+
+const { multisigPda, vaultPda } = await createMultisigVault(
+  connection, keypair, members, 2, 0
+)
+console.log('Share link:', getVaultShareLink(multisigPda.toBase58()))
+```
+
+## Environment Configuration
+
+Create a `.env` file in your project root:
+
+```env
+SOLANA_RPC_URL=https://mainnet.helius-rpc.com/?api-key=YOUR_API_KEY
+```
+
+Or set it programmatically:
+
+```typescript
+import { setRpcUrl } from 'slopwallet/rpc'
+setRpcUrl('https://api.devnet.solana.com')
+```
+
+Wallet data is stored in `wallet-data/` directory in your project root.
 
 ## Web UI
 

@@ -11,13 +11,11 @@
 
 import { Connection } from '@solana/web3.js'
 import { config } from 'dotenv'
-import { fileURLToPath } from 'url'
 import * as path from 'path'
 
-// Load .env silently - suppress dotenv verbose output
-const __dirname = path.dirname(fileURLToPath(import.meta.url))
+// Load .env from the consumer's project root
 process.env.DOTENV_CONFIG_QUIET = 'true'
-config({ path: path.join(__dirname, '..', '.env') })
+config({ path: path.join(process.cwd(), '.env') })
 
 const DEFAULT_RPC_URL = 'https://api.mainnet-beta.solana.com'
 

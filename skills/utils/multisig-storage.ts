@@ -6,7 +6,6 @@
 
 import * as fs from 'fs/promises'
 import * as path from 'path'
-import { fileURLToPath } from 'url'
 
 const MULTISIG_STORAGE_KEY = "squads_multisigs";
 
@@ -28,12 +27,7 @@ function isBrowser(): boolean {
  * Get file path for Node.js storage
  */
 function getStorageFilePath(): string {
-  try {
-    const __dirname = path.dirname(fileURLToPath(import.meta.url))
-    return path.join(__dirname, '..', '..', 'wallet-data', 'multisigs.json')
-  } catch {
-    return './wallet-data/multisigs.json'
-  }
+  return path.join(process.cwd(), 'wallet-data', 'multisigs.json')
 }
 
 /**
